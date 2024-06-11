@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+       .wrapper{
+        overflow: hidden;
+        border-radius: 25% 25%;
+        margin: 0 auto;
+        display: flex;  
+        margin-top: 150px;
+        /* width: 600px; */
+        /* height: 600px; */
+    }
+
+
+       .pedro {
+        scale: 1.1;
+        border-radius: 50%;
+        margin: 0 auto;
+       }
+
+       @keyframes bounce {
+        to { translate: 0 20px; }
+       }
+       .pedro {
+        animation: bounce 200ms
+        linear infinite alternate;
+       } 
+
+       @keyframes spin {
+        to { rotate: -1turn; }
+       }
+       .wrapper {
+        animation: spin 10s
+        linear infinite;
+       } 
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <img src="second_pedro.jpg" class="pedro">
+    </div>
+</body>
+</html>
