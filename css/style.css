@@ -274,18 +274,30 @@ h4 {
 }
 
 .dior_main .container {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: center; */
+    display: grid;
+    grid-template-areas: 
+    'img1 img2 cont';
+    margin-left: 250px;
+    gap: 50px;
 }
 
 .dior_main_img_1 {
-    margin-right: 45px;
+    /* margin-right: 45px; */
+    grid-area: img1;
+}
+
+.dior_main_img_2 {
+    /* margin-right: 45px; */
+    grid-area: img2;
 }
 
 .dior_main_content {
     width: 480px;
-    margin-left: 46px;
+    /* margin-left: 46px; */
+    grid-area: cont;
 }
 
 .dior_main_header {
@@ -343,6 +355,8 @@ h4 {
 .chanel_main_images {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
     margin-top: 12px;
 }
 
@@ -379,11 +393,14 @@ h4 {
 }
 
 .Yves_Saint_Laurant_main .container {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 207px;
-
+    gap: 207px; */
+    display: grid;
+    grid-template-areas: 
+    'img1 cont img2';
+    gap: 150px;
 }
 
 .Yves_Saint_Laurant_main_content_header {
@@ -394,9 +411,18 @@ h4 {
     text-align: center;
 }
 
+.Yves_Saint_Laurant_main_content {
+    grid-area: cont;
+}
+
 .Yves_Saint_Laurant_main_img_1 {
     margin-left: 50px;
+    grid-area: img1;
 }
+
+.Yves_Saint_Laurant_main_img_2 {
+    grid-area: img2;
+} 
 
 /* Estee Lauder Main */
 
@@ -407,12 +433,27 @@ h4 {
 }
 
 .estee_lauder_main .container {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-areas: 
+    'cont img1 img2';
     gap: 123px;
     width: 1250px;
+}
+
+.estee_lauder_main_content {
+    grid-area: cont;
+}
+
+.estee_lauder_main_img_1 {
+    grid-area: img1;
+}
+
+.estee_lauder_main_img_1 {
+    grid-area: img2;
 }
 
 .estee_lauder_main_content_header {
@@ -532,4 +573,193 @@ h4 {
     align-items: center;
     font-size: 16px;
     font-family: "Inknut Antiqua", serif;
+}
+
+@media (max-width: 750px) {
+    .brands_images {
+        margin-top: 45px;
+        display: grid;
+        grid-template-areas: 
+        'img1'
+        'img2'
+        'img3'
+        'img4'
+        'img5'
+        ;
+    }
+}
+
+@media (max-width: 900px) {
+    .search-bar {
+        display: none;
+    }
+
+    .dior_main .container {
+        display: grid;
+        grid-template-areas: 
+        'cont'
+        'img1'
+        'img2';
+        /* margin-left: 150px; */
+        /* gap: 50px; */
+    }
+}
+
+@media (max-width: 1000px) {
+    .brands_images {
+        margin-top: 45px;
+        display: grid;
+        grid-template-areas: 
+        'img1 img2'
+        'img1 img4'
+        'img3 img5'
+        ;
+    }
+}
+
+@media (min-width: 900px) {
+    .dior_main .container {
+        display: grid;
+        grid-template-areas: 
+        'cont cont'
+        'img1 img2';
+    }
+}
+
+@media (min-width: 900px) {
+    .dior_main .container {
+        display: grid;
+        grid-template-areas: 
+        'img1 img2 cont';
+        margin-left: 250px;
+        gap: 50px;
+}}
+
+/* Dior Page  */
+
+.dior_page_bg {
+    background: url(../assets/img/dior_page_bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 400px;
+    margin-top: 145px;
+}
+
+
+.product_navigation {
+    background-color: var(--pink);
+    min-height: 150px;
+}
+
+.product_navigation .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.navigation_perfume_text, 
+.navigation_lipstick_text,
+.navigation_shadow_text,
+.navigation_tonal_text {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--black);
+    text-align: center;
+    margin-top: 9px;
+}
+
+.navigation_perfume_text:hover, 
+.navigation_lipstick_text:hover,
+.navigation_shadow_text:hover,
+.navigation_tonal_text:hover {
+    color: var(--violate);
+}
+
+/* Dior Products */
+
+/* .reviews_cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 5rem;
+    margin-top: 55px;
+    padding: 20px;
+    margin-left: 60px;
+} */
+
+.dior_products {
+    background-color: var(--white);
+
+}
+
+.dior_products .container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.best_seller_header {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--black);
+    font-family: "Inter", sans-serif;
+}
+
+.best_seller_items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 5rem;
+    margin-top: 55px;
+    padding: 20px;
+    width: 1350px;
+    margin: 0 auto;
+}
+
+.best_seller_item {
+    width: 300px;
+    min-height: 420px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.best_seller_item_desciption {
+    font-size: 20px;
+    color: var(--black);
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 37px;
+}
+
+.best_seller_item_bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 45px;
+}
+
+.best_seller_item_price {
+    font-size: 20px;
+    color: var(--black);
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+
+.best_seller_item_btn {
+    background-color: var(--dark-grey);
+    color: var(--black);
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    font-size: 16px;
+    font-family: "Inknut Antiqua", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
