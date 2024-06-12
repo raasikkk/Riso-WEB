@@ -17,3 +17,19 @@ const addEventOnElem = (elems, event, callback) => {
   };
   
   addEventOnElem(navLinks, "click", closeNavbar);
+
+const product_popup = document.querySelector("[product_popup]")
+const popup_open = document.querySelectorAll("[popup_open]")
+const popup_close = document.querySelectorAll("[popup_close]")
+
+const togglepopup = () => {
+  product_popup.classList.toggle("active");
+}
+
+addEventOnElem(popup_open, "click", togglepopup);
+
+const closepopup = () => {
+  product_popup.classList.remove("active");
+};
+
+addEventOnElem(popup_close, "click", closepopup);

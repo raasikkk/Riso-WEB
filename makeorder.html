@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="css/makeorder.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.js"></script>
+</head>
+<body>
+   
+       <!-- Navbar -->
+       <nav class="navbar" id="navbar">
+        <div class="container">
+            <button class="logo"></button>
+
+            <div class="search-bar">
+                <input type="text" id="search" name="search" placeholder="Search">
+            </div>
+
+            <div class="navigation">
+                <div class="catalog_navigation">Catalogue</div>
+
+                <button class="brands_navigation_btn" data-nav-toggler>Brands</button>
+            </div> 
+
+            <ul class="brands_navigation" data-navbar>
+                <li class="link"><a href="index.html" data-nav-link>Home</a></li>
+                <li class="link"><a href="dior.html" data-nav-link>ChristianDior</a></li>
+                <li class="link"><a href="chanel.html" data-nav-link>Chanel</a></li>
+                <li class="link"><a href="yvessaintlaurent.html" data-nav-link>YvesSaintLaurent</a></li>
+                <li class="link"><a href="esteelauder.html" data-nav-link>Estee Lauder</a></li>
+                <li class="link"><a href="givenchy.html" data-nav-link>Givenchy Paris</a></li>
+                <li class="link"><a href="#" data-nav-link>Close navbar</a></li>
+            </ul>
+        </div>
+    </nav>
+   
+    <div class="form-container">
+        <h1>Making an order</h1>
+        <div class="form-description">
+            <div></div>
+            <p>Fill out a simple form and our managers will contact you, answer any questions and prepare a payment invoice.</p>
+        </div>
+        <form>
+            <div class="form-group">
+                <div>
+                    <label for="name">Name : *</label>
+                    <input class="make" type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="address">Address :</label>
+                    <input class="make" type="text" id="address" name="address">
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <label for="phone">Phone number : *</label>
+                    <input class="make" type="text" id="phone" name="phone" required>
+                </div>
+                <div>
+                    <label for="comment">Comment on the order :</label>
+                    <textarea id="comment" name="comment"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <label for="email">Email :</label>
+                    <input class="make" type="email" id="email" name="email">
+                </div>
+            </div>
+            <button type="submit" class="submit-button">Submit</button>
+            <div class="required-note">
+                <i>*</i>
+                <span>Required fields</span>
+            </div>
+        </form>
+    </div>
+
+
+   
+    <script src="js/script.js"></script>
+</body>
+</html>

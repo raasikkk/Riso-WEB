@@ -64,7 +64,7 @@ h4 {
     width: 100%;
     height: 120px;
     background-color: var(--white);
-    z-index: 1000;
+    z-index: 1;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
 
@@ -452,7 +452,7 @@ h4 {
     grid-area: img1;
 }
 
-.estee_lauder_main_img_1 {
+.estee_lauder_main_img_2 {
     grid-area: img2;
 }
 
@@ -617,16 +617,44 @@ h4 {
     }
 }
 
-@media (min-width: 900px) {
+@media (max-width: 1180px) {
     .dior_main .container {
         display: grid;
         grid-template-areas: 
         'cont cont'
         'img1 img2';
+        margin-left: 30px;
+
+    }
+
+    .estee_lauder_main .container {
+        display: grid;
+        grid-template-areas: 
+        'cont cont'
+        'img1 img2';
+        gap: 35px;
+        width: 1250px;
+        margin: 0 auto;
+        margin-left: 30px;
+    }
+
+    .estee_lauder_main_content {
+        grid-area: cont;
+        margin-right: 90px;
+    }
+    
+    .estee_lauder_main_img_1 {
+        grid-area: img1;
+        margin-left: 50px;
+    }
+    
+    .estee_lauder_main_img_2 {
+        grid-area: img2;
+        margin-right: 50px;
     }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1180px) {
     .dior_main .container {
         display: grid;
         grid-template-areas: 
@@ -634,6 +662,17 @@ h4 {
         margin-left: 250px;
         gap: 50px;
 }}
+
+@media (max-width: 1250px) {
+    .Yves_Saint_Laurant_main .container {
+        display: grid;
+        grid-template-areas: 
+        'cont cont'
+        'img1 img2';
+        gap: 25px;
+        margin-left: 20px;
+    }
+}
 
 /* Dior Page  */
 
@@ -709,20 +748,42 @@ h4 {
 .best_seller_items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 5rem;
+    gap: 2rem; 
     margin-top: 55px;
     padding: 20px;
-    width: 1350px;
+    width: 100%;
+    max-width: 1350px;
     margin: 0 auto;
 }
 
 .best_seller_item {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     min-height: 420px;
     background-color: var(--white);
     display: flex;
     flex-direction: column;
     padding: 15px;
+}
+
+@media (max-width: 768px) {
+    .best_seller_items {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .best_seller_item {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .best_seller_items {
+        grid-template-columns: 1fr;
+    }
+
+    .best_seller_item {
+        max-width: 100%;
+    }
 }
 
 .best_seller_item_desciption {
@@ -762,4 +823,133 @@ h4 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Chanel Page */
+
+.chanel_page_bg {
+    background: url(../assets/img/chanel_page_bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 400px;
+    margin-top: 145px;
+}
+
+/* Yves Page */
+
+.yvesaintlaurent_page_bg {
+    background: url(../assets/img/yvessaintlaurent_page_bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 400px;
+    margin-top: 145px;
+}
+
+/* Estee Page */
+
+.estee_page_bg {
+    background: url(../assets/img/esteelauder_page_bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 400px;
+    margin-top: 145px;
+}
+
+/* Givenchy Page */
+
+.givenchy_page_bg {
+    background: url(../assets/img/givenchy_page_bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 400px;
+    margin-top: 145px;
+}
+
+/* Product info Popup */
+
+.product_information_popup {
+    position:fixed;
+    top: 19%;
+    left: 30%;
+    width: 100%;
+    border-radius: 12px;
+    opacity: 0; 
+    pointer-events: none; 
+    transition: 0.5s all;
+    z-index: 1000; 
+    width: 600px;
+    min-height: 600px;
+    background-color: var(--pink);
+}
+
+.product_information_popup.active { 
+    opacity: 1;
+    pointer-events: all; 
+    transition: 0.5s all;
+  }
+
+.product_information_content {
+    background: var(--light-grey);
+    width: 600px;
+    height: 70vh;
+    padding: 15px;
+    transition: 0.5s all;
+    z-index: 20; 
+    border-radius: 12px;
+    display: grid;
+    grid-template-areas: 
+    'img name'
+    'img price'
+    'info info';
+}
+
+.product_information_content.active {
+    transform: translate(-50%, -50%) scale(1);
+    transition: 0.5s all;
+}
+
+.product_information_popup_img {
+    grid-area: img;
+    width: 300px;
+    height: 250px;
+}
+
+.product_information_popup_name {
+    grid-area: name;
+    font-size: 45px;
+    font-family: "Italiana", cursive;;
+    font-weight: 700;
+    text-align: center;
+    margin-right: 35px;
+    margin-top: 25px;
+}
+
+.product_information_popup_price {
+    grid-area: price;
+    font-size: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    margin-bottom: 25px;
+    margin-left: 10px;
+}
+
+.product_information_popup_info {
+    grid-area: info;
+    font-size: 25px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    padding: 15px;
+}
+
+.product_information_content a {
+    font-size: 55px;
+    color: var(--pink);
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
 }
